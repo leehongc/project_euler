@@ -1,0 +1,11 @@
+function multiplesOf3and5(number) {
+  var result = 0
+  for (let num = 0; num < number; num++) {
+    if (num%3 == 0 || num%5 ==0){
+      result += num
+    }
+  }
+  return result;
+}
+
+multiplesOf3and5(1000);
