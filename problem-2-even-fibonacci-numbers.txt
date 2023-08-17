@@ -7,16 +7,19 @@ By considering the terms in the Fibonacci sequence whose values do not exceed n,
 
 
 function fiboEvenSum(n) {
-var cur_list = [1,2];
 if (n==0 || n==1){
   return
 } else if (n==2){
   return 2
 } else {
+  var cur_list = [1,2];
   var cur_even = 2;
   for (let i=2; i<n; i++){
     var cur_num = cur_list[cur_list.length-1] + cur_list[cur_list.length-2]
     cur_list.push(cur_num);
+
+    // adding this to keep the array length small and save memory
+    cur_list = cur_list.slice(1);
     if (cur_num %2 == 0 && cur_num <= n){cur_even += cur_num}
   } 
   return cur_even
